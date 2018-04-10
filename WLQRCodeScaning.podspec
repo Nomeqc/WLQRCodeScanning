@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'WLQRCodeScaning'
-  s.version          = '0.1.0'
+  s.version          = '0.1.1'
   s.summary          = 'QRCode Scanning'
 
 # This description is used to generate tags and improve search results.
@@ -21,10 +21,10 @@ Pod::Spec.new do |s|
 TODO: Add long description of the pod here.
                        DESC
 
-  s.homepage         = 'https://github.com/nomeqc@gmail.com/WLQRCodeScaning'
+  s.homepage         = 'https://github.com/Nomeqc/WLQRCodeScanning'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'nomeqc@gmail.com' => 'xie5405@163.com' }
-  s.source           = { :git => '/Users/fallrainy/Home/LocalPods/WLQRCodeScaning', :tag => s.version.to_s }
+  s.source           = { :git => 'https://github.com/Nomeqc/WLQRCodeScanning.git', :tag => s.version.to_s }
 
   s.ios.deployment_target = '8.0'
   s.prefix_header_file = 'WLQRCodeScaning/pch/WLQRCodeScaning-Prefix.pch'
