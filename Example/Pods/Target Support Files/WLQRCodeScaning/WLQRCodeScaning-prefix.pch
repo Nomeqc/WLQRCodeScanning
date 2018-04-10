@@ -1,0 +1,56 @@
+#ifdef __OBJC__
+#import <UIKit/UIKit.h>
+#else
+#ifndef FOUNDATION_EXPORT
+#if defined(__cplusplus)
+#define FOUNDATION_EXPORT extern "C"
+#else
+#define FOUNDATION_EXPORT extern
+#endif
+#endif
+#endif
+
+//
+//  Prefix header
+//
+//  The contents of this file are implicitly included at the beginning of every source file.
+//
+
+#import <Availability.h>
+
+#ifndef __IPHONE_5_0
+#warning "This project uses features only available in iOS SDK 5.0 and later."
+#endif
+
+#ifdef __OBJC__
+    @import UIKit;
+    @import Foundation;
+#endif
+
+//读取pod中的资源
+#ifndef WLPodResourceBundleNamed
+#define WLPodResourceBundleNamed(bundleName) ({\
+NSBundle *bundle = [NSBundle bundleForClass:[self class]];\
+NSURL *url = [bundle URLForResource:bundleName withExtension:@"bundle"];\
+[NSBundle bundleWithURL:url];\
+})
+#endif
+
+#ifndef QRResourceBundle
+#define QRResourceBundle ({\
+NSBundle *bundle = nil;\
+if ([[NSBundle mainBundle].bundlePath isEqualToString:[NSBundle bundleForClass:[self class]].bundlePath]) {\
+bundle = [NSBundle mainBundle];\
+} else {\
+bundle = WLPodResourceBundleNamed(@"Resource");\
+}\
+bundle;\
+})
+#endif
+
+#ifndef QRImageNamed
+#define QRImageNamed(imageName) ({\
+NSBundle *bundle = QRResourceBundle;\
+[UIImage imageNamed:imageName inBundle:bundle compatibleWithTraitCollection:nil];\
+})
+#endif

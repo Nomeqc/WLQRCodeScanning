@@ -9,7 +9,7 @@
 Pod::Spec.new do |s|
   s.name             = 'WLQRCodeScaning'
   s.version          = '0.1.0'
-  s.summary          = 'A short description of WLQRCodeScaning.'
+  s.summary          = 'QRCode Scanning'
 
 # This description is used to generate tags and improve search results.
 #   * Think: What does it do? Why did you write it? What is the focus?
@@ -22,21 +22,18 @@ TODO: Add long description of the pod here.
                        DESC
 
   s.homepage         = 'https://github.com/nomeqc@gmail.com/WLQRCodeScaning'
-  # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'nomeqc@gmail.com' => 'xie5405@163.com' }
-  s.source           = { :git => 'https://github.com/nomeqc@gmail.com/WLQRCodeScaning.git', :tag => s.version.to_s }
-  # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
+  s.source           = { :git => '/Users/fallrainy/Home/LocalPods/WLQRCodeScaning', :tag => s.version.to_s }
 
   s.ios.deployment_target = '8.0'
-
+  s.prefix_header_file = 'WLQRCodeScaning/pch/WLQRCodeScaning-Prefix.pch'
   s.source_files = 'WLQRCodeScaning/Classes/**/*'
-  
-  # s.resource_bundles = {
-  #   'WLQRCodeScaning' => ['WLQRCodeScaning/Assets/*.png']
-  # }
-
-  # s.public_header_files = 'Pod/Classes/**/*.h'
-  # s.frameworks = 'UIKit', 'MapKit'
-  # s.dependency 'AFNetworking', '~> 2.3'
+  s.public_header_files = 'WLQRCodeScaning/Classes/**/*.h'
+  s.resource_bundles = {
+    'Resource' => ['WLQRCodeScaning/Resources/**/*.*']
+  }
+  s.dependency 'Masonry'
+  s.dependency 'pop'
+  s.dependency 'ChameleonFramework'
 end

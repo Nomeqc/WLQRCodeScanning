@@ -1,0 +1,6 @@
+framework module Pods_WLQRCodeScaning_Example {
+  umbrella header "Pods-WLQRCodeScaning_Example-umbrella.h"
+
+  export *
+  module * { export * }
+}

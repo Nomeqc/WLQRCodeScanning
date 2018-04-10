@@ -7,8 +7,10 @@
 //
 
 #import "WLViewController.h"
+#import "WLQRCodeScanController.h"
 
 @interface WLViewController ()
+@property (weak, nonatomic) IBOutlet UILabel *label;
 
 @end
 
@@ -17,7 +19,18 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
+}
+
+- (IBAction)rightBarButtonTapped:(UIBarButtonItem *)sender {
+    WLQRCodeScanController *scanController = [[WLQRCodeScanController alloc] init];
+    __weak typeof(self) weakSelf = self;
+    [scanController setDetectQRCodeHandler:^(NSString *result) {
+        typeof(weakSelf) self = weakSelf;
+        self.label.text = result;
+    }];
+    scanController.enablePlaySounds = YES;
+    UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:scanController];
+    [self presentViewController:navController animated:YES completion:NULL];
 }
 
 - (void)didReceiveMemoryWarning

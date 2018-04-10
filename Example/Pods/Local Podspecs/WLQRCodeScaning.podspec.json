@@ -1,0 +1,40 @@
+{
+  "name": "WLQRCodeScaning",
+  "version": "0.1.0",
+  "summary": "A short description of WLQRCodeScaning.",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/nomeqc@gmail.com/WLQRCodeScaning",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "nomeqc@gmail.com": "xie5405@163.com"
+  },
+  "source": {
+    "git": "/Users/fallrainy/Home/LocalPods/WLQRCodeScaning",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "8.0"
+  },
+  "prefix_header_file": "WLQRCodeScaning/pch/WLQRCodeScaning-Prefix.pch",
+  "source_files": "WLQRCodeScaning/Classes/**/*",
+  "public_header_files": "WLQRCodeScaning/Classes/**/*.h",
+  "resource_bundles": {
+    "Resource": [
+      "WLQRCodeScaning/Resources/**/*.*"
+    ]
+  },
+  "dependencies": {
+    "Masonry": [
+
+    ],
+    "pop": [
+
+    ],
+    "ChameleonFramework": [
+
+    ]
+  }
+}

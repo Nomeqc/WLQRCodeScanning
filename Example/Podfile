@@ -1,6 +1,9 @@
 use_frameworks!
 
 target 'WLQRCodeScaning_Example' do
+  pod 'Masonry'
+  pod 'pop'
+  pod 'ChameleonFramework'
   pod 'WLQRCodeScaning', :path => '../'
 
   target 'WLQRCodeScaning_Tests' do
