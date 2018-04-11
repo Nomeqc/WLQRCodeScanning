@@ -43,7 +43,7 @@
 #define QRResourceBundle ({\
     NSBundle *bundle = nil;\
     if (WL_IS_POD_ENV) {\
-        bundle = WLPodResourceBundleNamed(@"Resource");\
+        bundle = WLPodResourceBundleNamed(@"WLQRCodeScanning");\
     } else {\
         bundle = [NSBundle mainBundle];\
     }\
