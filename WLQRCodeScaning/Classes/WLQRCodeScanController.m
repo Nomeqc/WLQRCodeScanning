@@ -537,7 +537,7 @@ typedef NS_ENUM( NSInteger, AVCamSetupResult ) {
 }
 
 - (void)processResult:(NSString *)result {
-    dispatch_async(dispatch_get_global_queue(0, 0), ^(void) {
+    dispatch_async(dispatch_get_main_queue(), ^(void) {
         NSLog(@"detect result:%@",result);
         if (self.navigationController.viewControllers.count > 1) {
             [self.navigationController popViewControllerAnimated:YES];
