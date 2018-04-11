@@ -16,9 +16,84 @@
 
 @implementation WLViewController
 
+#ifndef WLPodResourceBundleNamed
+#define WLPodResourceBundleNamed(bundleName) ({\
+NSURL *url = [[NSBundle bundleForClass:[self class]] URLForResource:bundleName withExtension:@"bundle"];\
+NSBundle *bundle = nil;\
+if (url) {\
+    bundle = [NSBundle bundleWithURL:url];\
+}\
+bundle;\
+})
+#endif
+//
+//
+//
+//#ifndef WLIsPodEnv
+//
+//#define WLIsPodEnv ({\
+//BOOL isPodRelease = NO;\
+//BOOL isPodDebug = NO;\
+//#ifdef POD_CONFIGURATION_RELEASE\
+//    isPodRelease = YES;\
+//#endif\
+//#ifdef POD_CONFIGURATION_DEBUG\
+//    isPodDebug = YES;\
+//#endif\
+//isPodRelease || isPodDebug;\
+//})
+//
+//#endif
+//
+//#ifndef QRResourceBundle
+//#define QRResourceBundle ({\
+//NSBundle *bundle = nil;\
+//BOOL isPodDebug = NO;\
+//BOOL isPodRelease = NO;\
+//#ifdef POD_CONFIGURATION_DEBUG\
+//isPodDebug = YES;\
+//#endif\
+//#ifdef POD_CONFIGURATION_RELEASE\
+//isPodRelease = YES;\
+//#endif\
+//if (isPodDebug || isPodRelease) {\
+//bundle = WLPodResourceBundleNamed(@"Resource");\
+//} else {\
+//bundle = [NSBundle mainBundle];\
+//}\
+//bundle;\
+//})
+//#endif
+//
+//#ifndef QRImageNamed
+//#define QRImageNamed(imageName) ({\
+//NSBundle *bundle = QRResourceBundle;\
+//[UIImage imageNamed:imageName inBundle:bundle compatibleWithTraitCollection:nil];\
+//})
+//#endif
+
+
+
+
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    
+//    NSBundle *bundle = WLPodResourceBundleNamed(@"bundle");
+//    BOOL isPodEnv = ({
+//        BOOL isPodRelease = NO;
+//        BOOL isPodDebug = NO;
+//#ifdef POD_CONFIGURATION_RELEASE
+//        isPodRelease = YES;
+//#endif
+//#ifdef POD_CONFIGURATION_DEBUG
+//        isPodDebug = YES;
+//#endif
+//        isPodRelease || isPodDebug;
+//    });
+//    NSLog(@"%@",isPodEnv? @"pod env":@"not pod env");
 }
 
 - (IBAction)rightBarButtonTapped:(UIBarButtonItem *)sender {

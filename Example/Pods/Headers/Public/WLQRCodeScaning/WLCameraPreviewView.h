@@ -1,0 +1,1 @@
+../../../../../WLQRCodeScaning/Classes/Views/WLCameraPreviewView.h

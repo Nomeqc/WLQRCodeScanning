@@ -1,0 +1,1 @@
+../../../../../WLQRCodeScaning/Classes/WLQRCodeScanController.h

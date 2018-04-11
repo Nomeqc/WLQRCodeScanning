@@ -1,0 +1,1 @@
+../../../../../WLQRCodeScaning/Classes/Categories/UIImage+WLColorExtension.h

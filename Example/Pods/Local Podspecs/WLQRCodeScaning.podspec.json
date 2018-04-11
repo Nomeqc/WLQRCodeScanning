@@ -1,9 +1,9 @@
 {
   "name": "WLQRCodeScaning",
-  "version": "0.1.0",
-  "summary": "A short description of WLQRCodeScaning.",
+  "version": "0.1.1",
+  "summary": "QRCode Scanning",
   "description": "TODO: Add long description of the pod here.",
-  "homepage": "https://github.com/nomeqc@gmail.com/WLQRCodeScaning",
+  "homepage": "https://github.com/Nomeqc/WLQRCodeScanning",
   "license": {
     "type": "MIT",
     "file": "LICENSE"
@@ -12,8 +12,8 @@
     "nomeqc@gmail.com": "xie5405@163.com"
   },
   "source": {
-    "git": "/Users/fallrainy/Home/LocalPods/WLQRCodeScaning",
-    "tag": "0.1.0"
+    "git": "https://github.com/Nomeqc/WLQRCodeScanning.git",
+    "tag": "0.1.1"
   },
   "platforms": {
     "ios": "8.0"

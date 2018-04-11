@@ -1,14 +1,19 @@
-use_frameworks!
+#use_frameworks!
 
 target 'WLQRCodeScaning_Example' do
-  pod 'Masonry'
-  pod 'pop'
-  pod 'ChameleonFramework'
+   
+source 'http://gitlab.fallrainy.top/root/XDBSpecs.git'
+source 'https://github.com/CocoaPods/Specs.git' #官方仓库的地址
+#pod 'WLQRCodeScaning'
+#  pod 'Masonry'
+#  pod 'pop'
+#  pod 'ChameleonFramework'
   pod 'WLQRCodeScaning', :path => '../'
 
-  target 'WLQRCodeScaning_Tests' do
-    inherit! :search_paths
+#  target 'WLQRCodeScaning_Tests' do
+#    inherit! :search_paths
+#
+#    
+#  end
 
-    
-  end
 end
