@@ -15,30 +15,47 @@
     @import Foundation;
 #endif
 
-//读取pod中的资源
-#ifndef WLPodResourceBundleNamed
-#define WLPodResourceBundleNamed(bundleName) ({\
-NSBundle *bundle = [NSBundle bundleForClass:[self class]];\
-NSURL *url = [bundle URLForResource:bundleName withExtension:@"bundle"];\
-[NSBundle bundleWithURL:url];\
-})
+/// 判断是否是pod环境
+#ifndef WL_IS_POD_ENV
+    #if POD_CONFIGURATION_DEBUG
+        #define WL_IS_POD_ENV YES
+    #elif POD_CONFIGURATION_RELEASE
+        #define WL_IS_POD_ENV YES
+    #else
+        #define WL_IS_POD_ENV NO
+    #endif
 #endif
 
+/// 获取指定名称的bundle
+#ifndef WLPodResourceBundleNamed
+    #define WLPodResourceBundleNamed(bundleName) ({\
+        NSURL *url = [[NSBundle bundleForClass:[self class]] URLForResource:bundleName withExtension:@"bundle"];\
+        NSBundle *bundle = nil;\
+        if (url) {\
+            bundle = [NSBundle bundleWithURL:url];\
+        }\
+        bundle;\
+    })
+#endif
+
+/// 根据是否是处于pod环境返回不同的bundle
 #ifndef QRResourceBundle
 #define QRResourceBundle ({\
-NSBundle *bundle = nil;\
-if ([[NSBundle mainBundle].bundlePath isEqualToString:[NSBundle bundleForClass:[self class]].bundlePath]) {\
-bundle = [NSBundle mainBundle];\
-} else {\
-bundle = WLPodResourceBundleNamed(@"Resource");\
-}\
-bundle;\
+    NSBundle *bundle = nil;\
+    if (WL_IS_POD_ENV) {\
+        bundle = WLPodResourceBundleNamed(@"Resource");\
+    } else {\
+        bundle = [NSBundle mainBundle];\
+    }\
+    bundle;\
 })
 #endif
 
+/// 读取图片
 #ifndef QRImageNamed
 #define QRImageNamed(imageName) ({\
-NSBundle *bundle = QRResourceBundle;\
-[UIImage imageNamed:imageName inBundle:bundle compatibleWithTraitCollection:nil];\
+    NSBundle *bundle = QRResourceBundle;\
+    [UIImage imageNamed:imageName inBundle:bundle compatibleWithTraitCollection:nil];\
 })
 #endif
+

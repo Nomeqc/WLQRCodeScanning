@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'WLQRCodeScaning'
-  s.version          = '0.1.1'
+  s.version          = '0.1.2'
   s.summary          = 'QRCode Scanning'
 
 # This description is used to generate tags and improve search results.
@@ -31,7 +31,7 @@ TODO: Add long description of the pod here.
   s.source_files = 'WLQRCodeScaning/Classes/**/*'
   s.public_header_files = 'WLQRCodeScaning/Classes/**/*.h'
   s.resource_bundles = {
-    'Resource' => ['WLQRCodeScaning/Resources/**/*.*']
+    'WLQRCodeScanning' => ['WLQRCodeScaning/Resources/**/*.*']
   }
   s.dependency 'Masonry'
   s.dependency 'pop'

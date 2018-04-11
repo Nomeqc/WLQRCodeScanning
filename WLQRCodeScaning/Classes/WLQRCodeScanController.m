@@ -82,6 +82,15 @@ typedef NS_ENUM( NSInteger, AVCamSetupResult ) {
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    BOOL isPodEnv = WL_IS_POD_ENV;
+    NSBundle *bundle = QRResourceBundle;
+    NSLog(@"QRCode Resource Bundle path:%@",bundle.bundlePath);
+    
+    NSBundle *classBundle = [NSBundle bundleForClass:[self class]];
+    NSURL *URL = [classBundle URLForResource:@"Resource" withExtension:@"bundle"];
+    
+    ;
+    
     self.extendedLayoutIncludesOpaqueBars = NO;
     [self setupUI];
     self.session = [[AVCaptureSession alloc] init];
